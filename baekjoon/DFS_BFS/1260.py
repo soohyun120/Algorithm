@@ -17,7 +17,7 @@ bfs_visited = [False] * (n+1)
 
 def dfs(graph, v, visited):
     visited[v] = True
-    dfs_result.append(v)
+    print(v, end=" ")
     for k in graph[v]:
         if not visited[k]:
             dfs(graph, k, visited)
@@ -27,19 +27,13 @@ def bfs(graph, v, visited):
     visited[v] = True
     while queue:
         x = queue.popleft()
-        bfs_result.append(x)
+        print(x, end=" ")
         for k in graph[x]:
             if not visited[k]:
                 queue.append(k)
                 visited[k] = True
 
-dfs_result = []
-bfs_result = []
-
 dfs(graph, v, dfs_visited)
+print()
 bfs(graph, v, bfs_visited)
-
-# 리스트 한 번에 출력
-print(*dfs_result)
-print(*bfs_result)
 
