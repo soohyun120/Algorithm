@@ -6,7 +6,7 @@ graph = []
 for i in range(n):
     graph.append(list(map(int, input().split())))
 
-# 이동할 네 방향 정의
+# 이동할 네 방향 정의 (상,하,좌,우)
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 
