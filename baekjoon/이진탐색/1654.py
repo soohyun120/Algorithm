@@ -7,7 +7,7 @@ a = [int(input()) for _ in range(k)]
 start = 1
 end = max(a)
 
-while(start <= end):
+while start <= end:
     total = 0
     mid = (start + end) // 2
     for x in a:
