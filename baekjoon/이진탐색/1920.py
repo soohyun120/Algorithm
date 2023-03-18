@@ -1,23 +1,26 @@
-def binary_search(array, target, start, end):
+import sys
+input = sys.stdin.readline
+
+def binary_search(arr, target, start, end):
     while start <= end:
         mid = (start + end) // 2
-        if array[mid] == target:
+        if target == arr[mid]:
             return mid
-        elif array[mid] > target:
-            end = mid - 1
-        else:
+        elif target > arr[mid]:
             start = mid + 1
+        else:
+            end = mid - 1
     return None
 
 n = int(input())
 a = list(map(int, input().split()))
-a.sort()
-
 m = int(input())
 b = list(map(int, input().split()))
 
-for i in b:
-    if binary_search(a, i, 0, n - 1) != None:
-        print(1)
+a.sort()
+
+for v in b:
+    if binary_search(a, v, 0, n - 1) != None:
+        print("1")
     else:
-        print(0)
+        print("0")
