@@ -3,19 +3,18 @@ input = sys.stdin.readline
 
 n, m = map(int, input().split())
 arr = list(map(int, input().split()))
+arr.sort()
 
-start = 1
-end = max(arr)
+start = 0
+end = arr[-1] - 1
 
 while start <= end:
-    count = 0
     mid = (start + end) // 2
-    for x in arr:
-        if x > mid:
-            count += x - mid
-        if count > m:   # 절단된 나무의 길이가 m보다 길면 중단
-            break
-    if count >= m:
+    total = 0
+    for v in arr:
+        if v > mid:
+            total += v - mid
+    if total >= m:
         start = mid + 1
     else:
         end = mid - 1
