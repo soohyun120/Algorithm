@@ -12,5 +12,3 @@ for i in range(2, n + 1):
         d[i] = min(d[i], d[i // 5] + 1)
 
 print(d[n])
-
-
