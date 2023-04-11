@@ -8,3 +8,4 @@ for i in range(T):
         d[j] = d[j - 1] + d[j - 5]
 
     print(d[n[i]])
+
