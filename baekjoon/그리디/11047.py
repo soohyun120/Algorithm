@@ -1,12 +1,13 @@
-n, k = map(int, input().split())
-coin_type = []
-for i in range(n):
-    coin_type.append(int(input()))
-coin_type.sort(reverse=True)
+import sys
+input = sys.stdin.readline
+
+N, K = map(int, input().split())
+arr = [int(input()) for _ in range(N)]
+arr.sort(reverse=True)
 
 result = 0
-for coin in coin_type:
-    result += k // coin
-    k %= coin
+for v in arr:
+    result += K // v
+    K %= v
 
 print(result)
