@@ -1,15 +1,11 @@
 a = input().split('-')
+for i in range(len(a)):
+    if '+' in a[i]:
+        a[i] = sum(map(int, a[i].split('+')))
 
-b = []
-for i in a:
-    j = i.split('+')
-    sum_value = 0
-    for k in j:
-        sum_value += int(k)
-    b.append(sum_value)
-
-result = b[0]
-for i in range(1, len(b)):
-    result -= int(b[i])
+a = list(map(int, a))
+result = a[0]
+for i in range(1, len(a)):
+    result -= a[i]
 
 print(result)
