@@ -1,12 +1,10 @@
-n = int(input())
-d = list(map(int, input().split()))
-
-d.sort()
+N = int(input())
+a = list(map(int, input().split()))
+a.sort()
 
 result = 0
-sum_value = 0
-for time in d:
-    sum_value += time
-    result += sum_value
+for v in a:
+    result += N * v
+    N -= 1
 
 print(result)
